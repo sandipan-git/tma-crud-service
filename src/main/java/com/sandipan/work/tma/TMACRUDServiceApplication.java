@@ -1,0 +1,13 @@
+package com.sandipan.work.tma;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TMACRUDServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TMACRUDServiceApplication.class, args);
+	}
+
+}
