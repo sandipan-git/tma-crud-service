@@ -19,7 +19,7 @@ jobs:
           command: mvn verify sonar:sonar -Dsonar.projectKey=sandipan-work_tma-crud-service
       - run:
           name: Docker Login
-          command: docker login -u sandipan2021 -p "$Passw0rd$"
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
           name: Building Container Image
           command: mvn clean compile jib:build -Dimage=sandipan2021/tma-crud-service:$CIRCLE_BUILD_NUM
