@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: "dev"
+  main:
+    banner-mode: "off"
+
+server:
+  email: work.sandipan@gmail.com
+management:
+  security:
+    enabled: false
+---
+
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      database: tma-dev-db01
+      user: tma-db-user
+      password: ZKLAdC0yAKC0FinQ
+      cluster: tma-db-cluster-01.tl4e0.mongodb.net
+---
+
+spring:
+  profiles: prod
+  data:
+    mongodb:
+      database: tma-dev-db01
+      user: tma-db-user
+      password: ZKLAdC0yAKC0FinQ
+      cluster: tma-db-cluster-01.tl4e0.mongodb.net

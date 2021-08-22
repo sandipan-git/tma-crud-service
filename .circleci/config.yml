@@ -9,14 +9,20 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build
+          name: Building Jar
           command: mvn -B -DskipTests clean package
       - run:
-          name: Test
+          name: Running JUnit
           command: mvn test
       - run:
-          name: Analyze on SonarCloud
+          name: Sonar Analysis
           command: mvn verify sonar:sonar -Dsonar.projectKey=sandipan-work_tma-crud-service
+      - run:
+          name: Docker Login
+          command: docker login -u sandipan2021 -p "$Passw0rd$"
+      - run:
+          name: Building Container Image
+          command: mvn clean compile jib:build -Dimage=sandipan2021/tma-crud-service:$CIRCLE_BUILD_NUM
 workflows:
   main:
     jobs:
