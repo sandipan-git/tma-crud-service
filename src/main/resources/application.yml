@@ -1,31 +1,20 @@
 spring:
   profiles:
-    active: "dev"
+    active: "local"
   main:
     banner-mode: "off"
 
 server:
-  email: work.sandipan@gmail.com
+  email: techgem1986@gmail.com
 management:
   security:
     enabled: false
 ---
 
 spring:
-  profiles: dev
-  data:
-    mongodb:
-      database: tma-dev-db01
-      user: tma-db-user
-      password: ZKLAdC0yAKC0FinQ
-      cluster: tma-db-cluster-01.tl4e0.mongodb.net
+  profiles: local
+
 ---
 
 spring:
-  profiles: prod
-  data:
-    mongodb:
-      database: tma-dev-db01
-      user: tma-db-user
-      password: ZKLAdC0yAKC0FinQ
-      cluster: tma-db-cluster-01.tl4e0.mongodb.net
+  profiles: aws

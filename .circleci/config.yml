@@ -16,13 +16,13 @@ jobs:
           command: mvn test
       - run:
           name: Sonar Analysis
-          command: mvn verify sonar:sonar -Dsonar.projectKey=sandipan-work_tma-crud-service
+          command: mvn verify sonar:sonar -Dsonar.projectKey=techgem1986_tma-crud-service
       - run:
           name: Docker Login
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
           name: Building Container Image
-          command: mvn clean compile jib:build -Dimage=sandipan2021/tma-crud-service:$CIRCLE_BUILD_NUM
+          command: mvn clean compile jib:build -Dimage=techgem1986/tma-crud-service:$CIRCLE_BUILD_NUM
 workflows:
   main:
     jobs:
